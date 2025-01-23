@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "27006b46-8da8-4423-a936-95e4ffeacd03",
+		"name": "SimpleBookApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40290795",
+		"_collection_link": "https://www.postman.com/docking-module-geologist-74212757/workspace/masailearnworkspace/collection/40290795-27006b46-8da8-4423-a936-95e4ffeacd03?action=share&source=collection_link&creator=40290795"
+	},
+	"item": [
+		{
+			"name": "Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{BASEURL}}/status"
+			},
+			"response": []
+		},
+		{
+			"name": "Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{BASEURL}}/books"
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASEURL}}/books/:bookId",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"books",
+						":bookId"
+					],
+					"variable": [
+						{
+							"key": "bookId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Authentication",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"Postman\",\r\n   \"clientEmail\": \"valentin@ejhjhxajjmple.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASEURL}}/api-clients/"
+			},
+			"response": []
+		},
+		{
+			"name": "Submit an Orders ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "38a8d51f0342ab66322d79bc8c9f72e8fbde46c2303a7c8c20cc4d25329449ea"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookId\": 1,\r\n  \"customerName\": \"John\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASEURL}}/orders"
+			},
+			"response": []
+		}
+	]
+}
